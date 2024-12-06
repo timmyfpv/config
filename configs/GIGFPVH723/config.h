@@ -43,9 +43,9 @@
 
 // ACC/GYRO SPI 1
 #define USE_SPI_GYRO
-#define GYRO_EXTI_PIN      PA3
-#define GYRO_CS_PIN        PA4
-#define GYRO_SPI_INSTANCE  SPI1
+#define GYRO_1_EXTI_PIN      PA3
+#define GYRO_1_CS_PIN        PA4
+#define GYRO_1_SPI_INSTANCE  SPI1
 
 #define SPI1_SCK_PIN         PA5
 #define SPI1_SDI_PIN         PA6
