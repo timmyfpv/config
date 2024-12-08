@@ -39,7 +39,7 @@
 
 // I/O
 #define LED0_PIN             PB4
-#define LED_STRIP_PIN        PC10
+#define LED_STRIP_PIN        PB14
 
 // ACC/GYRO SPI 1
 #define USE_SPI_GYRO
@@ -65,17 +65,23 @@
 #define ADC_CURR_PIN         PC3
 #define ADC_INSTANCE         ADC1
 
+// Add these lines for internal ADC features
+#define USE_ADC_INTERNAL
+#define USE_ADC3             // Temperature sensor is on ADC3 for H723
+#define ADC3_INSTANCE        ADC3
+#define ADC3_DMA_OPT        1  // Similar to your ADC1_DMA_OPT
+
 // UART PORTS
-// #define UART1_TX_PIN         PB10
-// #define UART1_RX_PIN         PB11
+#define UART3_TX_PIN         PB10
+#define UART3_RX_PIN         PB11
 
-#define UART2_TX_PIN         PE8
-#define UART2_RX_PIN         PE7
+#define UART7_TX_PIN         PE8
+#define UART7_RX_PIN         PE7
 
-// #define UART3_TX_PIN         PA0
-// #define UART3_RX_PIN         PA1
+#define UART4_TX_PIN         PA0
+#define UART4_RX_PIN         PA1
 
-// #define UART4_RX_PIN         PB5
+//#define UART4_RX_PIN         PB5
 
 // TIMERS
 #define TIMER_PIN_MAPPING \
@@ -83,7 +89,7 @@
     TIMER_PIN_MAP( 1, PB7 , 1,  1) \
     TIMER_PIN_MAP( 2, PB8 , 1,  0) \
     TIMER_PIN_MAP( 3, PB9 , 1,  0) \
-    TIMER_PIN_MAP( 4, PC10, 1,  0)
+    TIMER_PIN_MAP( 4, PB14, 2,  0)
 
 // MOTORS PINOUT
 #define MOTOR1_PIN           PB6
@@ -98,5 +104,5 @@
 #define DEFAULT_BLACKBOX_DEVICE         BLACKBOX_DEVICE_FLASH
 #define DEFAULT_CURRENT_METER_SOURCE    CURRENT_METER_ADC
 #define DEFAULT_VOLTAGE_METER_SOURCE    VOLTAGE_METER_ADC
-#define DEFAULT_VOLTAGE_METER_SCALE     100
+#define DEFAULT_VOLTAGE_METER_SCALE     109
 #define DEFAULT_DSHOT_BURST DSHOT_DMAR_ON
