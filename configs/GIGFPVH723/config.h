@@ -24,7 +24,9 @@
 #define FC_TARGET_MCU     STM32H723
 
 #define BOARD_NAME        GIGFPVH723
-#define MANUFACTURER_ID   GIG
+#define MANUFACTURER_ID   GIGFPV
+
+#define GYRO_1_ALIGN                        CW90_DEG
 
 #define USE_ACC
 #define USE_GYRO
@@ -33,12 +35,12 @@
 #define USE_GYRO_SPI_ICM42688P // For ICM42688P variation
 
 #define USE_FLASH
-#define USE_FLASH_M25P16
 #define USE_FLASH_W25Q128FV
-#define USE_FLASH_W25N01G
 
 // I/O
 #define LED0_PIN             PB4
+#define LED_STRIP_PIN        PA2
+#define BEEPER_PIN           PE13
 
 // ACC/GYRO SPI 1
 #define USE_SPI_GYRO
@@ -80,14 +82,19 @@
 #define UART4_TX_PIN         PA0
 #define UART4_RX_PIN         PA1
 
+#define UART9_RX_PIN         PD14
+#define UART9_TX_PIN         PD15
+
 //#define UART4_RX_PIN         PB5
 
 // TIMERS
 #define TIMER_PIN_MAPPING \
-    TIMER_PIN_MAP( 0, PB6 , 2,  1) \
-    TIMER_PIN_MAP( 1, PB7 , 2,  1) \
-    TIMER_PIN_MAP( 2, PB8 , 2,  0) \
-    TIMER_PIN_MAP( 3, PB9 , 2,  0) 
+    TIMER_PIN_MAP( 0, MOTOR1_PIN , 2,  0) \
+    TIMER_PIN_MAP( 1, MOTOR2_PIN , 2,  1) \
+    TIMER_PIN_MAP( 2, MOTOR3_PIN , 2,  2) \
+    TIMER_PIN_MAP( 3, MOTOR4_PIN , 2,  3) \
+    TIMER_PIN_MAP( 4, LED_STRIP_PIN , 1,  4) \
+    TIMER_PIN_MAP( 5, BEEPER_PIN, 1, -1)
 
 // MOTORS PINOUT
 #define MOTOR1_PIN           PB6
@@ -104,3 +111,4 @@
 #define DEFAULT_VOLTAGE_METER_SOURCE    VOLTAGE_METER_ADC
 #define DEFAULT_VOLTAGE_METER_SCALE     109
 #define DEFAULT_DSHOT_BURST DSHOT_DMAR_ON
+#define BEEPER_INVERTED
